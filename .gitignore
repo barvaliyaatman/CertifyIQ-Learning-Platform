@@ -1,0 +1,45 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# IDE and editor folders
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Log files
+*.log
+
+# Environment and config overrides
+.env
+.env.*
+config/config.local.php
+
+# Uploaded files
+uploads/
+uploads/*
+
+# Cache and session files
+cache/
+*.cache
+*.session
+
+# Composer dependencies (if used in future)
+vendor/
+
+# Node dependencies (if used in future)
+node_modules/
+
+# SQL dumps/backups (if you create them)
+*.sql
+*.sql.gz
+
+# Misc
+*.bak
+*.tmp
+*.swp
+*.lock 

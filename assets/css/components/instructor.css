@@ -1,0 +1,436 @@
+/* Instructor Dashboard Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Course Content Styles */
+.content-container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content-actions {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+}
+
+.sortable-content {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content-item {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 4px;
+    cursor: move;
+    transition: all 0.3s ease;
+}
+
+.content-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+/* Content Header Styles */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.content-header h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+}
+
+.back-btn {
+    padding: 8px 16px;
+    background: #f8f9fa;
+    color: #495057;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #e9ecef;
+    color: #212529;
+}
+
+/* Content Actions Styles */
+.content-actions {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 12px;
+}
+
+.add-btn {
+    padding: 10px 20px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.add-btn i {
+    font-size: 14px;
+}
+
+.add-btn:hover {
+    background: #357abd;
+    transform: translateY(-1px);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+}
+
+.lesson-type {
+    display: inline-block;
+    padding: 3px 8px;
+    background: #e9ecef;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-top: 5px;
+    color: #495057;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    background: #fff;
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+}
+
+.modal h2 {
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+}
+
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.modal input,
+.modal select,
+.modal textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+.modal textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.modal .file-input {
+    position: relative;
+}
+
+.modal .file-input small {
+    display: block;
+    color: #666;
+    margin-top: 5px;
+    font-size: 0.85em;
+}
+
+.modal .form-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.modal button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.modal .btn-primary {
+    background: #4a90e2;
+    color: white;
+}
+
+.modal .btn-secondary {
+    background: #e9ecef;
+    color: #495057;
+}
+
+.modal button:hover {
+    transform: translateY(-2px);
+}
+
+.modal .btn-primary:hover {
+    background: #357abd;
+}
+
+.modal .btn-secondary:hover {
+    background: #dde2e6;
+}
+
+.modal .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.modal .close:hover {
+    color: #333;
+    transform: rotate(90deg);
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Modal Adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .modal .form-actions {
+        flex-direction: column;
+    }
+
+    .modal button {
+        width: 100%;
+    }
+}
+
+/* Enhanced Form Styles */
+.content-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.content-form input,
+.content-form select,
+.content-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.content-form input:focus,
+.content-form select:focus,
+.content-form textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.1);
+}
+
+.content-form button {
+    padding: 12px 20px;
+    background: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.content-form button:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+}
+
+.content-form button:active {
+    transform: translateY(0);
+}
+
+/* Lesson Status Indicators */
+.lesson-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9em;
+}
+
+.status-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.status-draft {
+    background: #ffc107;
+}
+
+.status-published {
+    background: #28a745;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .content-container {
+        padding: 15px;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .content-actions {
+        flex-direction: column;
+    }
+
+    .content-form button {
+        width: 100%;
+    }
+}
+
+/* Assignment Styles */
+.assignments-list {
+    padding: 20px;
+}
+
+.assignment-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.assignment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.assignment-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-edit, .btn-delete {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-edit {
+    background: #4a90e2;
+    color: white;
+}
+
+.btn-delete {
+    background: #dc3545;
+    color: white;
+}
+
+.assignment-details {
+    color: #666;
+}
+
+.assignment-meta {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    color: #666;
+}
+
+.due-date, .max-score {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.no-assignments {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.no-assignments i {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: #ddd;
+}
