@@ -100,3 +100,5 @@ SECURITY NOTES
 LICENSE
 -------
 This project is for educational purposes. Please add your own license if you plan to distribute it.
+
+![Alt text](assets/images/home-page.png)
