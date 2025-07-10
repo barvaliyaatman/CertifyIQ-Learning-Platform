@@ -105,5 +105,7 @@ SCREENSHOT
 -------
 
 ![home-page](assets/images/home-page.png)
+
 ![home-page](assets/images/courses.png)
+
 ![home-page](assets/images/instructor.png)
