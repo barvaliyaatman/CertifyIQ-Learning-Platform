@@ -1,1 +1,0 @@
-# CertifyIQ-Learning-Platform
